@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miramar SG - Hotel</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="body">
+      <div class="container-form">
+        <div class="signin-signup">
+          <form class="sign-in-form">
+            <h2 class="title">Sign In</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                name="username"
+                placeholder="John Doe"
+                id="username"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <input type="submit" value="Login" class="btn-form" />
+            <p class="account-text">
+              Don't have an account? <a href="#" id="sign-up-btn2">Sign up</a>
+            </p>
+          </form>
+          <form class="sign-up-form">
+            <h2 class="title">Sign Up</h2>
+            <div class="input-field">
+              <i class="fa-solid fa-user"></i>
+              <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="John Doe"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-envelope"></i>
+              <input
+                type="text"
+                name="Email Address"
+                id="Email Address"
+                placeholder="johndoe@miramar.com"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="password1"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <div class="input-field">
+              <i class="fa-solid fa-lock"></i>
+              <input
+                type="password"
+                name="password2"
+                id="password"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <input type="submit" value="Sign Up" class="btn-form" />
+            <p class="account-text">
+              Already have an account?<a href="#" id="sign-in-btn2">Sign in</a>
+            </p>
+          </form>
+        </div>
+        <div class="panels-container">
+          <div class="panel left-panel">
+            <div class="content">
+              <h3>Already have an account</h3>
+              <button class="btn-form" id="sign-in-btn">Sign In</button>
+            </div>
+            <img class="image" src="./img/signin.svg" alt="sign in" />
+          </div>
+          <div class="panel right-panel">
+            <div class="content">
+              <h3>A new member?</h3>
+              <button class="btn-form" id="sign-up-btn">Sign Up</button>
+            </div>
+            <img class="image" src="./img/signup.svg" alt="sign in" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const sign_in_btn = document.querySelector("#sign-in-btn");
+      const sign_up_btn = document.querySelector("#sign-up-btn");
+      const containerEl = document.querySelector(".container-form");
+      const sign_in_btn2 = document.querySelector("#sign-in-btn2");
+      const sign_up_btn2 = document.querySelector("#sign-up-btn2");
+
+      sign_up_btn.addEventListener("click", () => {
+        containerEl.classList.add("sign-up-node");
+      });
+
+      sign_in_btn.addEventListener("click", () => {
+        containerEl.classList.remove("sign-up-node");
+      });
+
+      sign_up_btn2.addEventListener("click", () => {
+        containerEl.classList.add("sign-up-node2");
+      });
+
+      sign_in_btn2.addEventListener("click", () => {
+        containerEl.classList.remove("sign-up-node2");
+      });
+    </script>
+  </body>
+</html>
