@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block check_out_page %}active{% endblock %}
+{% block title %} CHECK OUT {% endblock title %}
+{% block content %}
+<h1 class="text-center">CHECK OUT</h1>
+
+<div class="container justify-content-center">
+    
+    {% for room in rooms %}
+    <div class="card w-75 my-5" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h1>{{room.id}}</h1>
+            <h5 class="card-title">{{room.room.room_type.upper}}</h5>
+            <p class="card-text"> {{room.room.description}} </p>
+            <div class="d-flex">
+                <a href="#" class="btn btn-primary me-2">BOOK NOW</a>
+                    
+                 <a href=" {% url "check_out_delete" room.id %} " class="btn btn-danger">CANCEL</a>
+            </div>
+            
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

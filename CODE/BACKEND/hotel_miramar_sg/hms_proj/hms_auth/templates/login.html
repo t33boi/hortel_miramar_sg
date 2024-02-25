@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+ {% block title %}{% endblock title %}
+    {% block content %}
+    <style>
+      .cont
+      {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .cont form 
+      {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+    <br>
+    <div class="cont">
+      <br/> <br/>
+      <form method="post" action="">
+        {% csrf_token %}
+          <h1 class="mb-5 text-center text-uppercase">Login</h1>
+            <div class="mb-3">
+              <label for="exampleInputUsername" class="form-label">Username</label>
+              <input name="username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+      
+            <button type="submit" class="btn btn-primary mb-3">Submit</button>
+            <a href="{% url "register" %}" type="submit" class="btn btn-light mb-3">Register</a>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+          </form>
+    </div>
+    {% endblock content %}
+   
